@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+:root {
+  --font-color: #333;
+  --primary-100: #4865f7;
+  --primary-200: #284bfa;
+  --primary-300: #0229e8;
+  --primary-400: #1e3ac7;
+  --primary-500: #32439c;
+
+  --font-100: 0.79rem;
+  --font-200: 0.9rem;
+  --font-300: 1rem;
+  --font-400: 1.125rem;
+  --font-500: 1.266rem;
+  --font-600: 1.424rem;
+  --font-700: 1.602rem;
+  --font-800: 1.802rem;
+
+  --short-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+    0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11),
+    0 8px 16px rgba(0, 0, 0, 0.11);
+  --long-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 0 4px 2px rgba(0, 0, 0, 0.09),
+    0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09),
+    0 32px 16px rgba(0, 0, 0, 0.09);
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgb(231, 251, 255) 0%,
+    rgb(139, 139, 139) 100%
+  );
+  letter-spacing: 0.15px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--font-color);
+}
+
+p {
+  max-width: 60ch;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover,
+a:focus {
+  color: #777;
+}
+/* UTILITIES */
+.flex {
+  display: flex;
+  align-items: center;
+}
+/* --------------- */
+/* BLOCKS */
+/* base button style */
+button {
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-style: none;
+  border-radius: 2rem;
+  background-color: var(--primary-400);
+  color: #fff;
+  box-shadow: var(--short-shadow);
+}
+button:hover,
+button:focus {
+  background-color: var(--primary-200);
+  color: #eee;
+}
+/* general footer style */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 50px;
+  padding: 0.75rem 2rem;
+  margin-top: 25px;
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  color: #ddd;
+  background-color: #333;
+}
+/* ------------------- */
+header {
+  width: 100vw;
+  max-height: 150px;
+  color: var(--font-color);
+  flex-direction: column;
+  justify-content: center;
+}
+.logo {
+  margin-top: 1rem;
+}
+.logo img {
+  cursor: pointer;
+  max-width: 60px;
+}
+.logo h1 {
+  margin-left: 0.5rem;
+}
+
+header nav {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin-top: 0.5rem;
+}
+.navlinks {
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navlinks li {
+  cursor: pointer;
+  list-style: none;
+  margin: 0.5rem;
+}
+.navlinks li:hover,
+.navlinks li:focus {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+section {
+  width: 100vw;
+  padding-top: 2rem; /*change in mq*/
+  background-color: white; /*dont generalize this style*/
+  flex-direction: column;
+}
+
+.container {
+  width: 100vw;
+  text-align: center;
+  font-size: var(--font-300);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.links {
+  height: 100%;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.page-link {
+  padding: 0.5rem 0;
+  font-size: var(--font-500);
+}
+
+@media (min-width: 639px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .logo {
+    margin: 0;
+  }
+
+  header nav {
+    border: none;
+    margin: 0;
+  }
+
+  .container {
+    text-align: start;
+    padding: 0 3rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 76.89px - 50px);
+  }
+  .page-links {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
